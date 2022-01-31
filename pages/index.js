@@ -55,7 +55,6 @@ export default function PaginaInicial() {
             backgroundColor: appConfig.theme.colors.neutrals[700],
           }}
         >
-          {/* Formulário */}
           <Box
             as="form"
             onSubmit={function (evento) {

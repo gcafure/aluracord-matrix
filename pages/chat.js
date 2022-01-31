@@ -66,7 +66,7 @@ export default function ChatPage() {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: appConfig.theme.colors.primary[500],
-        backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
+        backgroundImage: `url(https://wallpaper.dog/large/5468007.jpg)`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundBlendMode: "multiply",
@@ -78,12 +78,12 @@ export default function ChatPage() {
           display: "flex",
           flexDirection: "column",
           flex: 1,
-          boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
-          borderRadius: "5px",
+          boxShadow: "#83449C 0px 0px 0px 1px, #3A123F 0px 8px 16px 0px",
+          borderRadius: "20px",
           backgroundColor: appConfig.theme.colors.neutrals[700],
           height: "100%",
-          maxWidth: "95%",
-          maxHeight: "95vh",
+          maxWidth: "70%",
+          maxHeight: "77%",
           padding: "32px",
         }}
       >
@@ -134,10 +134,31 @@ export default function ChatPage() {
                 color: appConfig.theme.colors.neutrals[200],
               }}
             />
-            {/* CallBack */}
+
             <ButtonSendSticker
               onStickerClick={(sticker) => {
                 handleNovaMensagem(":sticker: " + sticker);
+              }}
+            />
+            <Button
+              onClick={(event) => {
+                event.preventDefault();
+                handleNovaMensagem(mensagem);
+              }}
+              type="submit"
+              label="Enviar"
+              styleSheet={{
+                width: "10%",
+                height: "44px",
+                resize: "none",
+                borderRadius: "5px",
+                marginBottom: "8px",
+              }}
+              buttonColors={{
+                contrastColor: appConfig.theme.colors.neutrals["000"],
+                mainColor: appConfig.theme.colors.primary[300],
+                mainColorLight: appConfig.theme.colors.primary[100],
+                mainColorStrong: appConfig.theme.colors.primary[200],
               }}
             />
           </Box>
@@ -148,6 +169,9 @@ export default function ChatPage() {
 }
 
 function Header() {
+  const roteamento2 = useRouter();
+  const usuarioLogado2 = roteamento2.query.username;
+
   return (
     <>
       <Box
@@ -159,7 +183,7 @@ function Header() {
           justifyContent: "space-between",
         }}
       >
-        <Text variant="heading5">Chat</Text>
+        <Text variant="heading5">Chat - Logado como: {usuarioLogado2} </Text>
         <Button
           variant="tertiary"
           colorVariant="neutral"
