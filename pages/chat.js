@@ -229,15 +229,27 @@ function MessageList(props) {
             >
               <Image
                 styleSheet={{
-                  width: "20px",
-                  height: "20px",
+                  width: "23px",
+                  height: "23px",
                   borderRadius: "50%",
                   display: "inline-block",
                   marginRight: "8px",
                 }}
                 src={`https://github.com/${mensagem.de}.png`}
               />
-              <Text tag="strong">{mensagem.de}</Text>
+              <Text
+                styleSheet={{
+                  fontSize: "18px",
+                  marginLeft: "8px",
+                  marginBottom: "5px",
+                  marginHorizontal: "2px",
+                  padding: "1px",
+                  textAlign: "top",
+                }}
+                tag="strong"
+              >
+                {mensagem.de}
+              </Text>
               <Text
                 styleSheet={{
                   fontSize: "10px",
